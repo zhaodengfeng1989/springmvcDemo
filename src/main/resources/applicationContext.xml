@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--方法一：使用注解的时候，什么都不需要配置，这个文件都可以去掉-->
+    <!--Empty-->
+
+    <!--方法二：需要配置控制器与访问地址的对应关系-->
+    <bean id="simpleUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="/userList">userController</prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="userController" class="com.zhaodf.controller.UserController"/>
+</beans>
